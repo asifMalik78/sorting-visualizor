@@ -1,0 +1,50 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="navigation-bar">
+      <div class="left">
+        <div class="generate-array-wraper">
+            <p>Size of Array : </p>
+            <input class="array-size-range" type="range" min="10" max="120">
+            <button class="generate">Generate Array</button>
+        </div>
+        
+        <!-- <div class="algo-speed-wrapper">
+            <p>Speed</p>
+            <input class="algo-speed" type="range" min="100" max="900">
+        </div> -->
+      </div>
+      <div class="right">
+        <h1>SORTING VISUALIZER</h1>
+        <ul>
+          <li><button class="btn" id="bubble-sort">Bubble Sort</button></li>
+          <li>
+            <button class="btn" id="selection-sort">Selection Sort</button>
+          </li>
+          <li>
+            <button class="btn" id="insertion-sort">Insertion Sort</button>
+          </li>
+          <li><button class="btn" id="merge-sort">Merge Sort</button></li>
+          <li><button class="btn" id="quick-sort">Quick Sort</button></li>
+          <li><button class="btn" id="heap-sort">Head Sort</button></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="main">
+        <div class="info"></div>
+        <div class="container"></div>
+    </div>
+    <script src="main.js"></script>
+    <script src="script/selectionSort.js"></script>
+    <script src="script/bubbleSort.js"></script>
+    <script src="script/insertionSort.js"></script>
+    <script src="script/mergeSort.js"></script>
+    <script src="script/quickSort.js"></script>
+  </body>
+</html>
