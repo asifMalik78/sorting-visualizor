@@ -2,11 +2,6 @@ let insertion = document.getElementById("insertion-sort");
 
 async function bubbleSort() {
   let arr = document.querySelectorAll(".bar");
-  if (arr.length === 0) {
-    alert("Generate the Array First");
-    enableButtons(document.querySelectorAll('.bar'));
-    return;
-  }
   for (let i = 1; i < arr.length; i++) {
     let no = parseInt(arr[i].getAttribute("value"));
     arr[i].style.backgroundColor = "darkblue";
@@ -53,6 +48,13 @@ async function bubbleSort() {
 
 }
 insertion.addEventListener("click", () => {
+  timeWorstCase.innerHTML=" O(n^2)";
+  timeAvgCase.innerHTML=" Θ(n^2)";
+  timeBestCase.innerHTML=" Ω(n)";
+  spaceWorstCase.innerHTML=" O(1)";
+  document.querySelector('.read-more').style.display="block";
+  document.querySelector('.read-more p a').innerHTML="Read More About Insertion Sort";
+  document.querySelector('.read-more p a').setAttribute('href' , 'https://www.geeksforgeeks.org/insertion-sort/');
   disableButtons(document.querySelectorAll('.btn'));
   arraySize.setAttribute('disabled' , 'true');
   bubbleSort();

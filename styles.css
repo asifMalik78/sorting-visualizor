@@ -3,6 +3,7 @@
     margin:0;
     box-sizing: border-box;
     font-family: sans-serif;
+    
 }
 
 
@@ -22,6 +23,17 @@
 .main{
     display: grid;
     grid-template-columns: 30% 70%;
+}
+
+.info{
+    padding:1.5rem 0;
+    width:max-content;
+    margin:0 auto;
+}
+
+.info p{
+    display: inline-block;
+    font-size: 1.6rem;
 }
 
 .container{
@@ -58,7 +70,8 @@
 }
 .generate-array-wraper p{
     display: inline-block;
-    font-size: 2rem;
+    font-size: 1.6rem;
+    margin-top:1rem;
 }
 
 
@@ -89,7 +102,7 @@
 }
 
 .btn:hover{
-    background-color: orange;
+    background-color: orange!important;
     color:white;
 }
 
@@ -110,7 +123,7 @@
 }
 
 .generate:hover{
-    background-color: #d0004f;
+    background-color: #d0004f!important;
     color:#ffdbef;
 }
 
@@ -187,6 +200,45 @@ input:checked + label::before{
     color:white;
     transition: all 0.5s ease-in-out;
 }
+
+.time-complexity h3{
+    text-decoration: underline;
+    font-size: 1.5rem;
+}
+
+.time-complexity{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.worst-case , .average-case , .best-case{
+    margin-top: 1rem;
+}
+
+.read-more{
+    display:none;
+    margin-top: 3rem;
+    border-radius: 0.6rem;
+    cursor:pointer;
+    padding:0.4rem 0.7rem;
+    background-color: yellow;
+    transition:all 0.4s ease-in-out;
+}
+
+.read-more:hover{
+    background-color: yellowgreen;
+}
+
+.read-more p a{
+    text-decoration: none;
+}
+
+.worst-case-space{
+    margin-top: 1.2rem;
+}
+
+
 
 
 

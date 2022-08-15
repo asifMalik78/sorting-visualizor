@@ -1,6 +1,11 @@
 let generateArrayBtn = document.querySelector(".generate");
 let arraySize=document.querySelector('.array-size-range');
 let toggleBtn=document.getElementById('check');
+let timeWorstCase=document.querySelector('.worst-case span');
+let timeAvgCase=document.querySelector('.average-case span');
+let timeBestCase=document.querySelector('.best-case span');
+let spaceWorstCase=document.querySelector('.worst-case-space span');
+let speed=document.querySelector('.algo-speed');
 let algorithmSpeed=300;
 function generateBar(size) {
   document.querySelector(".container").innerHTML = "";
@@ -21,6 +26,9 @@ function disableButtons(buttons) {
     btn.setAttribute("disabled", "true");
     btn.style.backgroundColor = "red";
   }
+  generateArrayBtn.style.color="white";
+  generateArrayBtn.setAttribute('disabled' , 'true');
+  generateArrayBtn.style.backgroundColor="red";
 }
 
 function enableButtons(buttons) {
@@ -29,6 +37,9 @@ function enableButtons(buttons) {
     btn.removeAttribute("disabled");
     btn.style.backgroundColor = "#b9ff38";
   }
+  generateArrayBtn.style.color="black";
+  generateArrayBtn.removeAttribute('disabled');
+  generateArrayBtn.style.backgroundColor="#b9ff38";
 }
 
 function timeout(ms) {
@@ -43,12 +54,14 @@ toggleBtn.addEventListener('click' , ()=>{
   document.querySelector('.navigation-bar').classList.toggle('dark-mode-nav')
   if(document.querySelector('.bg').classList.contains('dark-mode-body')){
     document.querySelector('.dark-mode-btn span').innerText="Dark Mode";
+    document.querySelector('.read-more p a').style.color="black";
   }
   else{
     document.querySelector('.dark-mode-btn span').innerText="Light Mode";
   }
 
 })
+
 arraySize.addEventListener('change' , ()=>{
     generateBar(arraySize.value);
 });

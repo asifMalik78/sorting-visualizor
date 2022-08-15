@@ -1,7 +1,6 @@
 let mergeBtn = document.getElementById("merge-sort");
 
 
-
 async function merge(arr, st, mid, en) {
   let n1 = parseInt(mid - st + 1);
   let n2 = parseInt(en - mid);
@@ -78,19 +77,22 @@ async function mergeSort(arr, st, en) {
   await timeout(300*2);
 }
 
-function mergeSortHelper(arr) {
-  if (arr.length === 0) {
-    alert("Generate the Array First");
-    enableButtons(document.querySelectorAll(".btn"));
-    return;
-  }
-
+async function mergeSortHelper(arr) {
   disableButtons(document.querySelectorAll(".btn"));
-  mergeSort(arr, 0, arr.length - 1);
-//   enableButtons(document.querySelectorAll(".btn"));
+  arraySize.setAttribute('disabled' , 'true');
+  await mergeSort(arr, 0, arr.length - 1);
+  enableButtons(document.querySelectorAll(".btn"));
+  arraySize.removeAttribute('disabled');
+ 
 }
 mergeBtn.addEventListener("click", () => {
+  timeWorstCase.innerHTML=" O(n*log(n))";
+  timeAvgCase.innerHTML=" Θ(n*LOG(n))";
+  timeBestCase.innerHTML=" Ω(n*LOG(n))";
+  spaceWorstCase.innerHTML=" O(n)";
+  document.querySelector('.read-more').style.display="block";
+  document.querySelector('.read-more p a').innerHTML="Read More About Merge Sort";
+  document.querySelector('.read-more p a').setAttribute('href' , 'https://www.geeksforgeeks.org/merge-sort/');
   let arr = document.querySelectorAll(".bar");
   mergeSortHelper(arr);
-  disableButtons(document.querySelectorAll(".btn"));
 });

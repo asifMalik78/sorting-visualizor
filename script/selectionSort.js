@@ -2,13 +2,6 @@ let selection = document.getElementById("selection-sort");
 
 async function selectionSort() {
   let arr = document.querySelectorAll(".bar");
-
-  if(arr.length===0){
-    alert("Generate The Array First");
-    enableButtons(document.querySelectorAll('.bar'));
-    return;
-  }
-
   for (let i = 0; i < arr.length; i++) {
     let minIdx = i;
     arr[i].style.backgroundColor = "darkblue";
@@ -25,13 +18,13 @@ async function selectionSort() {
 
       if (val1 > val2) {
         if (minIdx != i) {
-          arr[minIdx].style.backgroundColor = "cyan";
+          arr[minIdx].style.backgroundColor = "blue";
         }
 
         minIdx = j;
         arr[minIdx].style.backgroundColor = "yellow";
       } else {
-        arr[j].style.backgroundColor = "cyan";
+        arr[j].style.backgroundColor = "blue";
       }
     }
 
@@ -50,7 +43,7 @@ async function selectionSort() {
       });
 
       arr[i].style.backgroundColor = "green";
-      arr[minIdx].style.backgroundColor = "cyan";
+      arr[minIdx].style.backgroundColor = "blue";
     } else {
       await new Promise((resolve) => {
         setTimeout(() => {
@@ -68,6 +61,13 @@ async function selectionSort() {
 }
 
 selection.addEventListener("click", () => {
+  timeWorstCase.innerHTML=" O(n^2)";
+  timeAvgCase.innerHTML=" Θ(n^2)";
+  timeBestCase.innerHTML=" Ω(N^2)";
+  spaceWorstCase.innerHTML=" O(1)";
+  document.querySelector('.read-more').style.display="block";
+  document.querySelector('.read-more p a').innerHTML="Read More About Selection Sort";
+  document.querySelector('.read-more p a').setAttribute('href' , 'https://www.geeksforgeeks.org/selection-sort/');
   disableButtons(document.querySelectorAll('.btn'));
   arraySize.setAttribute('disabled' , 'true');
   selectionSort();

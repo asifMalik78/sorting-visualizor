@@ -55,10 +55,28 @@ async function quickSort(arr, st, en) {
   await quickSort(arr, pivotIdx + 1, en);
   // await timeout(300);
 }
-function quickSortHelper(arr) {
-  quickSort(arr, 0, arr.length - 1);
+async function quickSortHelper(arr) {
+  disableButtons(document.querySelectorAll(".btn"));
+  arraySize.setAttribute("disabled", "true");
+
+  await quickSort(arr, 0, arr.length - 1);
+
+  enableButtons(document.querySelectorAll(".btn"));
+  arraySize.removeAttribute("disabled");
 }
 quick.addEventListener("click", () => {
+  timeWorstCase.innerHTML = " O(n^2)";
+  timeAvgCase.innerHTML = " Θ(n*log(n))";
+  timeBestCase.innerHTML = " Ω(n*log(n))";
+  spaceWorstCase.innerHTML = " O(n*log(n))";
+  document.querySelector(".read-more").style.display = "block";
+  document.querySelector(".read-more p a").innerHTML =
+    "Read More About Quick Sort";
+  document
+    .querySelector(".read-more p a")
+    .setAttribute("href", "https://www.geeksforgeeks.org/quick-sort/");
   let arr = document.querySelectorAll(".bar");
+  // disableButtons(document.querySelectorAll(".btn"));
+  // arraySize.setAttribute("disabled", "true");
   quickSortHelper(arr);
 });

@@ -3,11 +3,6 @@ let bubble = document.getElementById("bubble-sort");
 async function bubbleSort() {
   let arr = document.querySelectorAll(".bar");
 
-  if(arr.length===0){
-    alert("Generate The Array First");
-    enableButtons(document.querySelectorAll('.bar'));
-    return;
-  }
 
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length - i - 1; j++) {
@@ -34,7 +29,7 @@ async function bubbleSort() {
               resolve();
             }, 300);
           });
-        arr[j].style.backgroundColor = "cyan";
+        arr[j].style.backgroundColor = "blue";
       } else {
         await new Promise((resolve) => {
             setTimeout(() => {
@@ -42,7 +37,7 @@ async function bubbleSort() {
             }, 300);
           });
 
-        arr[j].style.backgroundColor = "cyan";
+        arr[j].style.backgroundColor = "blue";
       }
     }
 
@@ -54,7 +49,14 @@ async function bubbleSort() {
 }
 
 bubble.addEventListener("click", () => {
+  timeWorstCase.innerHTML=" O(n^2)";
+  timeAvgCase.innerHTML=" Θ(n^2)";
+  timeBestCase.innerHTML=" Ω(n)";
+  spaceWorstCase.innerHTML=" O(1)";
+  document.querySelector('.read-more').style.display="block";
+  document.querySelector('.read-more p a').innerHTML="Read More About Bubble Sort";
+  document.querySelector('.read-more p a').setAttribute('href' , 'https://www.geeksforgeeks.org/bubble-sort/');
   disableButtons(document.querySelectorAll('.btn'));
-  arraySize.setAttribute('disable' , 'true');
+  arraySize.setAttribute('disabled' , 'true');
   bubbleSort();
 });

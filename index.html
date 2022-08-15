@@ -9,11 +9,6 @@
   </head>
   <body class="bg">
     <nav class="navigation-bar">
-
-        <!-- <div class="algo-speed-wrapper">
-            <p>Speed</p>
-            <input class="algo-speed" type="range" min="100" max="900">
-        </div> -->
       </div>
       <div class="right">
         <h1>SORTING VISUALIZER</h1>
@@ -27,7 +22,7 @@
           </li>
           <li><button class="btn" id="merge-sort">Merge Sort</button></li>
           <li><button class="btn" id="quick-sort">Quick Sort</button></li>
-          <li><button class="btn" id="heap-sort">Heap Sort</button></li>
+          <li><button class="btn" id="wave-sort">Wave Sort</button></li>
           <li>
             <div class="dark-mode-btn">
             <div class="checkBoxWrapper">
@@ -42,10 +37,29 @@
     </nav>
     <div class="main">
       <div class="info">
+        <!-- <div class="algo-speed-wrapper">
+          <p>Speed :</p>
+          <input class="algo-speed" type="range" min="300" max="1200">
+      </div> -->
         <div class="generate-array-wraper">
           <p>Size of Array :</p>
-          <input class="array-size-range" type="range" min="10" max="160" />
+          <input class="array-size-range" type="range" min="10" max="165" />
           <button class="generate">Generate Array</button>
+      </div>
+      <div class="time-complexity">
+        <h3>TIME COMPLEXITY :-</h3>
+        <p class="worst-case">Worst Case :<span></span></p>
+        <p class="average-case">Average Case :<span></span></p>
+        <p class="best-case">Best Case :<span></span></p>
+      </div>
+
+      <div class="space-complexity time-complexity">
+        <h3>SPACE COMPLEXITY :-</h3>
+        <p class="worst-case-space">Worst Case :<span></span></p>
+      </div>
+
+      <div class="read-more">
+        <p><a  target="_blank">Read More About Merge Sort</a></p>
       </div>
       </div>
       <div class="container"></div>
@@ -56,5 +70,6 @@
     <script src="script/insertionSort.js"></script>
     <script src="script/mergeSort.js"></script>
     <script src="script/quickSort.js"></script>
+    <script src="script/waveSort.js"></script>
   </body>
 </html>
