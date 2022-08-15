@@ -7,23 +7,30 @@
 
 
 .navigation-bar{
-    display: grid;
-    grid-template-columns: 40% 60%;
-    background-color: lightblue;
+    padding:20px 10px;
+    text-align: center;
+    margin:0 auto;
+    background-color: #6f6f6f;
+    color: white;
     
+}
+
+.bg{
+    background-color: #f6f6f6;
 }
 
 .main{
     display: grid;
-    grid-template-columns: 38% 62%;
+    grid-template-columns: 30% 70%;
 }
 
 .container{
     display: flex;
-    width: 900px;
+    width: 100%;
+    padding:0 2rem;
     height: 450px;
     margin:0 auto;
-    margin-top:150px;
+    margin-top:120px;
     transform: scaleY(-1);
 }
 
@@ -41,7 +48,7 @@
 
 .right h1{
     font-size: 2.8rem;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 
@@ -58,8 +65,10 @@
 
 .right ul{
     padding-left:0;
-    margin:0.5rem 0;
+    width: 70%;
+    margin:0.5rem auto;
     display: flex;
+    justify-content: space-evenly;
     column-gap: 2rem;
 }
 
@@ -73,10 +82,17 @@
     padding:0.7rem 0.5rem;
     border-radius: 0.5rem;
     border:none;
-    background-color: orange;
+    background-color: #b9ff38;
     cursor:pointer;
     color:black;
+    transition: 0.3s ease-out;
 }
+
+.btn:hover{
+    background-color: orange;
+    color:white;
+}
+
 
 .generate{
     display: block;
@@ -86,9 +102,92 @@
     border-radius: 0.5rem;
     margin-top: 0.8rem;
     border:none;
-    background-color: violet;
-    cursor:pointer;
+    background-color: #b9ff38;
     color:black;
+    cursor:pointer;
+    transition: 0.3s ease-out;
+
 }
+
+.generate:hover{
+    background-color: #d0004f;
+    color:#ffdbef;
+}
+
+.dark-mode-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.checkboxWrapper{
+    height: 2rem;
+    width: 3.5rem;
+    margin-top: 5px;
+}
+
+.dark-mode-btn span{
+    font-size: 1.3rem;
+    margin:0 10px
+}
+
+#check{
+    padding:0;
+    margin:0;
+    display: none;
+}
+
+
+label{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #282828;
+    cursor: pointer;
+    border-radius: 8.5rem;
+}
+
+
+label::before{
+    content:'';
+    position: absolute;
+    display: block;
+    top:0.32rem;
+    left:0.36rem;
+    height:1.3rem;
+    width:1.3rem;
+    background-color:#b9ff38;
+    border-radius: 50%;
+    transition: all 0.5s ease-in-out;
+}
+
+
+input:checked + label{
+    background-color: lightblue;
+}
+
+
+input:checked + label::before{
+    left:1.9rem;
+    background-color: #548100;
+}
+
+
+
+.dark-mode-body{
+    background-color: #1b1c22;
+    color:white;
+    transition: all 0.5s ease-in-out;
+}
+
+.dark-mode-nav{
+    background-color: #0f0f10;
+    color:white;
+    transition: all 0.5s ease-in-out;
+}
+
+
 
 

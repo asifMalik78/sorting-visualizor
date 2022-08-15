@@ -1,8 +1,8 @@
-let generateArrayBtn = document.querySelector(".left .generate");
+let generateArrayBtn = document.querySelector(".generate");
 let arraySize=document.querySelector('.array-size-range');
-
+let toggleBtn=document.getElementById('check');
 let algorithmSpeed=300;
-function generateBar(size = 35) {
+function generateBar(size) {
   document.querySelector(".container").innerHTML = "";
   for (let i = 1; i <= size; i++) {
     var height = Math.floor(Math.random() * 100) + 1;
@@ -27,7 +27,7 @@ function enableButtons(buttons) {
   for (btn of buttons) {
     btn.style.color="black";
     btn.removeAttribute("disabled");
-    btn.style.backgroundColor = "orange";
+    btn.style.backgroundColor = "#b9ff38";
   }
 }
 
@@ -38,8 +38,17 @@ function timeout(ms) {
 
 
 
+toggleBtn.addEventListener('click' , ()=>{
+  document.querySelector('.bg').classList.toggle('dark-mode-body');
+  document.querySelector('.navigation-bar').classList.toggle('dark-mode-nav')
+  if(document.querySelector('.bg').classList.contains('dark-mode-body')){
+    document.querySelector('.dark-mode-btn span').innerText="Dark Mode";
+  }
+  else{
+    document.querySelector('.dark-mode-btn span').innerText="Light Mode";
+  }
 
-
+})
 arraySize.addEventListener('change' , ()=>{
     generateBar(arraySize.value);
 });
@@ -50,5 +59,6 @@ generateArrayBtn.addEventListener('click' , ()=>{
 
 
 window.addEventListener("load", () => {
-  generateBar();
+  generateBar(40);
+  arraySize.value="40";
 });
